@@ -1,0 +1,74 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta charset = "utf-8">
+<style>
+
+form {
+	width:500px;
+	margin:0 200px;
+}
+
+input{
+	width:100px;
+	height:100px;
+	margin:3px;
+	font:34px/26px comic sans ms;
+	color:#092074;
+}
+</style>
+<title>Пятнашки</title>
+</head>
+<body>
+	
+		<form name = "myForm">
+		
+				<input type = "button" value = "1" onclick = "game(0)">
+				<input type = "button" value = "2" onclick = "game(1)">
+				<input type = "button" value = "3" onclick = "game(2)">
+				<input type = "button" value = "4" onclick = "game(3)">
+				<br>
+				<input type = "button" value = "5" onclick = "game(4)">
+				<input type = "button" value = "6" onclick = "game(5)">
+				<input type = "button" value = "7" onclick = "game(6)">
+				<input type = "button" value = "8" onclick = "game(7)">
+				<br>
+				<input type = "button" value = "9" onclick = "game(8)">
+				<input type = "button" value = "10" onclick = "game(9)">
+				<input type = "button" value = "11" onclick = "game(10)">
+				<input type = "button" value = "12" onclick = "game(11)">
+				<br>
+				<input type = "button" value = "13" onclick = "game(12)">
+				<input type = "button" value = "14" onclick = "game(13)">
+				<input type = "button" value = "15" onclick = "game(14)">
+				<input type = "button" value = " " onclick = "game(15)">
+		</form>
+	<script>
+		function myChange(n, m){
+		   var f = document.myForm.elements;
+		   var f0 = f[n].value;
+		   f[n].value = f[m].value;
+		   f[m].value = f0;
+		   }
+		
+		   
+		function game(n){
+		  var f = document.myForm.elements;
+		  if (n % 4 == 3); 
+		  else if (f[n+1].value != ' ');
+			   else myChange(n, n+1);
+		  if (n % 4 == 0);
+		  else if (f[n-1].value != ' ');
+		       else  myChange(n, n-1);
+		  if (n > 11);
+		  else if (f[n+4].value != ' ');
+		       else myChange(n, n+4);
+		  if (n < 4);
+		  else if (f[n-4].value != ' ');
+		       else myChange(n, n-4);
+		}
+	</script>
+	
+	
+</body>
+</html>
